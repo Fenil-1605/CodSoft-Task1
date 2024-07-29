@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+        .about hr {
+            border: 0;
+            height: 1px;
+            background: #333;
+            background-image: linear-gradient(to right, #ccc, #333, #ccc);
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes typing-cursor {
+            from {
+                width: 5px;
+            }
+
+            to {
+                width: 0;
+            }
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            border: 0;
+            outline: none;
+            background: #262626;
+            padding: 15px;
+            margin: 15px 0;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: darkorange;
+        }
+
+        button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .skill-mf .progress {
+            margin: .5rem 0 1.2rem 0;
+            border-radius: 0;
+            height: .5rem;
+            background-color: #f3f3f3;
+            overflow: hidden;
+        }
+
+        .skill-mf .progress .progress-bar {
+            height: 100%;
+            background-color: #08c9f4;
+            line-height: .5rem;
+            color: white;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: 10px;
+        }
+        .social-icons a :hover {
+    transform: scale(1.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.social-icons a {
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+        .social-icons img {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .btn-secondary {
+            margin-bottom: 10px;
+        }
+
+        .about-education-experience {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .about-education-experience>div {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .about-education-experience>div:last-child {
+            margin-right: 0;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 80vh; 
+        }
+
+        .hero h6 {
+            margin-bottom: 10px;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .hero h1 {
+            margin-bottom: 20px;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .hero p {
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .hero .btn-social-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .skills {
+            padding: 50px 0;
+        }
+
+        .skills .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .skills .progress-wrap {
+            margin-bottom: 20px;
+        }
+
+        .skills .progress-wrap h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .skills .progress-wrap .progress {
+            background-color: #f3f3f3;
+        }
+
+        .skills .progress-wrap .progress-bar {
+            background-color: #5ed4ee;
+            color: white;
+            text-align: center;
+        }
+        .underline {
+  width: 100%;
+  height: 4px;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  margin-top: 5px;
+  opacity: 50%; }
+  
+  .block-20 {
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 180px; }
+  .ftco-section {
+  padding: 7em 0;
+  position: relative; }
+  @media (max-width: 767.98px) {
+    .ftco-section {
+      padding: 6em 0; } }
+
+      .btn-primary
+      {
+        margin-bottom: 100px;
+        cursor: pointer;
+        align-items: center;
+        border-radius: 40px;
+      }
+
+      .ftco-hireme {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            padding: 100px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ftco-hireme .col-md-7 {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .ftco-hireme::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); 
+            z-index: 1;
+        }
+
+        .card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; 
+    justify-content: space-between;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex: 1; 
+    min-width: 30%; 
+    text-align: center;
+    transition: transform 0.3s; 
+}
+
+.card:hover {
+    transform: scale(1.05); 
+}
+
+.card .overlay {
+    position: relative;
+}
+
+.card .block-20 {
+    display: block;
+    width: 100%; 
+    height: 300px; 
+    background-size: cover; 
+    background-position: center; 
+}
+
+.card p {
+    padding: 0 15px;
+    text-align: center;
+    margin: 10px 0;
+}
+.skills-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skills-column {
+            width: 48%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site-main-wrapper">
+        <button class="hamberger">
+            <img src="./images/hamberger.svg" alt="">
+        </button>
+
+        <div class="mobile-nav">
+            <button class="times"><img src="./images/times.svg" alt=""></button>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Project</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <header>
+            <div class="container">
+                <nav id="main-nav" class="flex items-center justify-between">
+                    <div class="left flex items-center">
+                        <div class="branding">
+                            <img src="" alt="">
+                        </div>
+                        <div>
+                            <a href="#">Home</a>
+                            <a href="#about">About</a>
+                            <a href="#skills">Skills</a>
+                            <a href="#Project">Project</a>
+                            <a href="#contact">Contact</a>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <button class="btn btn-primary">Contact</button>
+                    </div>
+                </nav>
+                <div class="hero">
+                    <div class="content">
+                        <h6>Hello!!</h6>
+                        <h1>I’m Fenil <span>Solanki</span></h1>
+                        <p>I am a dedicated software engineering student with a passion for technology and innovation. With a strong foundation in front-end development, I'm continuously enhancing my skills and knowledge to excel in the tech industry.</p>
+                        <div class="btn-social-container">
+                            <button id="find-me-btn" class="btn btn-secondary">Find me</button>
+                            <div class="social-icons" id="social-icons">
+                                <a href="https://www.linkedin.com/in/fenil-solanki-98a136316"><img src="images/icons8-linkedin-48.png" alt="linkedin"></a>
+                                <a href="https://www.facebook.com/fenildhirubhai.solanki?mibextid=ZbWKwL"><img src="images/icons8-facebook-48.png" alt="Facebook"></a>
+                                <a href="https://www.instagram.com/fenil.solankii/"><img src="images/icons8-instagram-48.png" alt="Instagram"></a>
+                                <a href="https://github.com/Fenil-1605"><img src="images/githubIcon.png" alt="GitHub"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br><br><br><br><br>
+        </header>
+
+        <section id="about" class="about">
+            <div class="container flex items-center about-inner-wrap">
+                <div class="flex-1">
+                    <img class="about-me-img" src="images/WhatsApp Image 2024-07-23 at 19.29.56_da098a3b.jpg" alt="">
+                </div>
+                <div class="flex-1 right">
+                    <h1>About <span>Me</span></h1>
+                    <h3>Hello! I’m Solanki Fenil.</h3>
+                    <p>Driven by curiosity and a passion for technology, I am an IT student with a deep interest in web development and software engineering. My academic journey has equipped me with a solid foundation and practical experience in creating innovative digital solutions. I thrive on challenges and enjoy transforming complex problems into seamless user experiences. Outside the classroom, I love exploring new tech trends, participating in hackathons, and collaborating on exciting projects.</p>
+                    <hr>
+                    <div class="about-education-experience">
+                        <div>
+                            <h3>Education</h3>
+                            <ul>
+                                <li>Completed 10th</li>
+                                Year : 2021<br>
+                                Grade : A
+                            </ul>
+                            <ul>
+                                <li>Diploma Engineering IT</li>
+                                Year : 2022-2026<br>
+                                University : Silver Oak University
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Experience</h3>
+                            <ul>
+                                <li>Fresher</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="underline"></div>
+        <section id="skills" class="skills">
+            <div class="container">
+                <h1 class="section-heading"><span>My </span>Skills</h1>
+                <p></p>
+                <div class="skills-container">
+                    <div class="skills-column">
+                        <h3>Technical Skills</h3>
+                        <div class="underline"></div><br>
+                        <div class="progress-wrap">
+                            <h3>HTML</h3>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 80%;">80%</div>
+                            </div>
+                        </div>
+                        <div class="progress-wrap">
+                            <h3>CSS</h3>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 70%;">70%</div>
+                            </div>
+                        </div>
+                        <div class="progress-wrap">
+                            <h3>JavaScript</h3>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 60%;">60%</div>
+                            </div>
+                        </div>
+                        <div class="progress-wrap">
+                            <h3>Java</h3>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 85%;">85%</div>
+                            </div>
+                        </div>
+                        <div class="progress-wrap">
+                            <h3>DBMS</h3>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 85%;">85%</div>
+                            </div>
+                        </div>
+                        <div class="progress-wrap">
+                            <h3>C</h3>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 80%;">80%</div>
+                            </div>
+                        </div>
+                        <div class="progress-wrap">
+                            <h3>C++</h3>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 80%;">80%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-column">
+                        <h3>Soft Skills</h3>
+                        <div class="underline"></div><br>
+                        <div class="progress-wrap">
+                            <h3>Communication</h3>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 90%;">90%</div>
+                            </div>
+                        </div>
+                        <div class="progress-wrap">
+                            <h3>Teamwork</h3>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 85%;">85%</div>
+                            </div>
+                        </div>
+                        <div class="progress-wrap">
+                            <h3>Problem-Solving</h3>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 80%;">80%</div>
+                            </div>
+                        </div>
+                        <div class="progress-wrap">
+                            <h3>Adaptability</h3>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 75%;">75%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="freelancer">
+            
+            <h1>I Am Available For Freelancer.</h1><br>
+            <a class="btn btn-primary" href="Fenil_Resume .docx" download="Fenil_Resume .docx">Download Resume</a>
+        </section>
+
+        <section id="Project" class="Project">
+            <div class="container">
+                <h1 class="section-heading"><span>My</span> Projects</h1><br><br><br>
+                <div class="card-wrapper">
+                    <div class="card">
+                        <div class="overlay">
+                            <a href="https://github.com/Fenil-1605/CodSoft-Task3.git" class="block-20 zoom-effect" style="background-image: url(images/images.jpeg);"></a>
+                        </div>
+                        <p><b>A simple calculator</b></p>
+                        <p>Using HTML,CSS,JavaScript</p>   
+                    </div>
+                    <div class="card">
+                        <div class="overlay">
+                            <a href="https://github.com/Fenil-1605/CodSoft-Task2.git" class="block-20 zoom-effect" style="background-image: url(images/landingpage.jpeg);"></a>
+                        </div>
+                        <p><b>Landing Page</b></p>
+                        <p>Using HTML & CSS</p>   
+                    </div>
+                    <div class="card">
+                        <div class="overlay">
+                            <a href="https://github.com/Fenil-1605/CodSoft-Task1.git" class="block-20 zoom-effect" style="background-image: url(images/01-preview.__large_preview.jpg);"></a>
+                        </div>
+                        <p><b>Portfolio website</b></p>
+                        <p>Using HTML,CSS,JavaScript/p>   
+                    </div>
+                </div>      
+            </div>
+        </section>
+            <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/dark-black-background-design-with-stripes_1017-38064.avif)">
+
+                <div class="row justify-content-center">
+                    <div class="col-md-7 ftco-animate text-center">
+                        <h2>View more projects on<span> Github  </span> </h2>
+                        <br>
+                        <p><a href="https://www.github.com/Fenil-1605" class="btn btn-primary py-3 px-5">GitHub</a></p>
+                    </div>
+                </div>
+            </div>
+       
+
+                                      
+        <div class="underline"></div>
+        <section class="contact" id="contact">
+            <div class="container">
+                <h1 class="section-heading">Contact <span>me</span></h1><br><br>
+                <form id="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required><br>
+                    <input type="email" name="Email" placeholder="Your Email" required><br>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea><br> 
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </form>
+                <p id="success-message" style="display: none; color: green;">Form submitted successfully!</p>
+            </div>
+        </section>
+        <footer>
+            <!-- <img class="footer-logo" src="./images/logo-2.svg" alt=""> -->
+            <div class="footer-socials">
+                <h1 style="color:white;">Feel free to reach out me !!</h1>
+                <a href="www.//https://github.com/Fenil-1605"><img src="images/githubIcon.png" alt=""></a>
+                <a href="https://www.facebook.com/fenildhirubhai.solanki?mibextid=ZbWKwL"><img src="images/icons8-facebook-48.png" alt=""></a>
+                <a href="https://www.instagram.com/fenil.solankii/"> <img src="images/icons8-instagram-48.png" alt=""></a>
+                <a href="https://x.com/SFenil94771?t=0fWiGE5ZCEp-23ibVUTBQg&s=08"> <img src="images/icons8-twitter-48.png" alt=""></a>
+                <a href="mailto:fenil.solanki2006@gmail.com"> <img src="images/icons8-mail-48.png" alt=""></a>
+                <a href="https://www.linkedin.com/in/fenil-solanki-98a136316"> <img src="images/icons8-linkedin-48.png" alt=""></a>
+             
+                
+            </div>
+            <div class="copyright">
+                Copyright 2024 © Fenil Solanki
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzG8tXhvjdM_o_5EsAs4iebGvInyTbnFMVz87iDkYRtlxvijCSdJJeYfCn7Y7PXJRHnmQ/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+      <script>
+        // Function to handle form submission
+        document.getElementById("submit-to-google-sheet").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            document.getElementById("success-message").style.display = "block";
+        });
+    </script>
+
+
+<script src="./js/app.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+  $(document).ready(function() {
+            $('.hamberger').click(function() {
+                $('.mobile-nav').addClass('open');
+            });
+
+            $('.times').click(function() {
+                $('.mobile-nav').removeClass('open');
+            });
+            $('#toggle-skills-btn').click(function() 
+            {
+                $('#additional-skills').toggle();
+                $(this).text(function(i, text) {
+                    return text === "See More" ? "See Less" : "See More";
+                });
+            });
+  });
+</script>
+</body>
+
+</html>
